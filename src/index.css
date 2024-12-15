@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 191 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 215 13% 90%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 269 74% 70%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 13% 90%;
+    --input: 215 13% 90%;
+    --ring: 191 100% 50%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1 {
+    @apply text-h1 mb-6;
+  }
+
+  h2 {
+    @apply text-h2 mb-4;
+  }
+
+  h3 {
+    @apply text-h3 mb-3;
+  }
+
+  h4 {
+    @apply text-h4 mb-2;
+  }
+
+  p {
+    @apply text-body mb-4;
+  }
+
+  label, button {
+    @apply text-ui;
+  }
+
+  small {
+    @apply text-body-sm;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-secondary/80 backdrop-blur-sm;
+  }
+
+  .neon-glow {
+    @apply animate-glow;
+  }
+
+  .nav-item {
+    @apply relative px-4 py-2 rounded-lg transition-all duration-200 hover:bg-primary/10;
+  }
+
+  .nav-item.active {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+
+  .nav-item.active::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-4 bg-primary rounded-r-full;
+  }
+}
